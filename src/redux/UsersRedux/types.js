@@ -1,0 +1,14 @@
+export const SET_TOKEN = "SET_TOKEN";
+export const SET_LIMIT = "SET_LIMIT";
+export const SET_OFFSET = "SET_OFFSET";
+
+export const SET_GROUP_BY = "SET_GROUP_BY";
+export const RESET_GROUP_BY = "RESET_GROUP_BY";
+
+export const SET_COUNT = "SET_COUNT";
+export const SET_PAGE = "SET_PAGE";
+
+export const FETCH_USERS = "FETCH_USERS"
+export const FETCHING_USERS_PENDING = "FETCHING_USERS_PENDING";
+export const FETCHING_USERS_SUCCESS = "FETCHING_USERS_SUCCESS";
+export const FETCHING_USERS_FAILURE = "FETCHING_USERS_FAILURE";

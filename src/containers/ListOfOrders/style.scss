@@ -1,0 +1,36 @@
+.kanban {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 95vw;
+  overflow-y: auto;
+  height: 600px;
+
+  .moveButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+      margin-bottom: 10px;
+    }
+  }
+
+  .cardColumns {
+    height: 100%;
+    padding: 10px;
+    width: 20vw;
+    background-color: #ddd;
+    overflow: auto;
+  }
+
+  .card { 
+    width: 100%;
+    min-height: 50px;
+    background-color: "black";
+  }
+  
+  button {
+    width: 50px;
+  }
+}
