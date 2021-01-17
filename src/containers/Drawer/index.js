@@ -20,6 +20,13 @@ import MailIcon from '@material-ui/icons/Mail';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PeopleIcon from '@material-ui/icons/People';
+import DoneIcon from '@material-ui/icons/Done';
+import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
+import CreateIcon from '@material-ui/icons/Create';
+import ArchiveIcon from '@material-ui/icons/Archive';
+import ListIcon from '@material-ui/icons/List';
+import AddIcon from '@material-ui/icons/Add';
+import BrokenImageIcon from '@material-ui/icons/BrokenImage';
 
 import DashboardRouter from '../DashboardRouter/index';
 import { useRouteMatch, Redirect } from 'react-router-dom';
@@ -174,55 +181,55 @@ export default function PersistentDrawerLeft(props) {
           </Link>
           <Link className="link" to={`${url}/carpetStatuses`} >
             <ListItem button key="addCustomer">
-              <ListItemIcon><PersonAddIcon /></ListItemIcon>
+              <ListItemIcon><BrokenImageIcon /></ListItemIcon>
               <ListItemText primary="Carpet statuses" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/carpetTypes`} >
             <ListItem button key="addCustomer">
-              <ListItemIcon><PersonAddIcon /></ListItemIcon>
+              <ListItemIcon><BrokenImageIcon /></ListItemIcon>
               <ListItemText primary="Carpet types" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/addCarpetType`} >
             <ListItem button key="addCustomer">
-              <ListItemIcon><PersonAddIcon /></ListItemIcon>
+              <ListItemIcon><AddIcon /></ListItemIcon>
               <ListItemText primary="Add carpet type" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/dispatchOrders`}>
             <ListItem button key="dispatchOrders">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><DirectionsCarIcon /></ListItemIcon>
               <ListItemText primary="Dispatch orders" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/listDriverOrders`}>
             <ListItem button key="listDriverOrders">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><ListIcon /></ListItemIcon>
               <ListItemText primary="List of orders" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/forMeasurments`}>
             <ListItem button key="forMeasurments">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><CreateIcon /></ListItemIcon>
               <ListItemText primary="For measure" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/measured`}>
             <ListItem button key="measured">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><ArchiveIcon /></ListItemIcon>
               <ListItemText primary="Measured orders" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/packed`}>
             <ListItem button key="packed">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><DoneIcon /></ListItemIcon>
               <ListItemText primary="Orders done" />
             </ListItem>
           </Link>
           <Link className="link" to={`${url}/forDrivers`}>
             <ListItem button key="forDrivers">
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon><DirectionsCarIcon /></ListItemIcon>
               <ListItemText primary="Orders for delivery" />
             </ListItem>
           </Link>

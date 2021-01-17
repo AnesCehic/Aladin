@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+table th {
+  background-color: rgb(243, 217, 72);
+  min-width: 100px;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history > div {
+  margin: 6px;
+  background-color: rgb(223, 202, 86);
+  padding: 10px 20px;
+  border: 3px solid darkgoldenrod;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+h1 {
+  text-align: center;
+}

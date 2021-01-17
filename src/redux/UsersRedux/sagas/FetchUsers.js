@@ -15,6 +15,8 @@ export function* fetchUsersSaga() {
 
     const { total, users } = res.data
 
+    console.log("Users: ", users)
+
     yield put(setCount(total))
     yield put(fethcUsersSuccess(users));
   } catch (error) {

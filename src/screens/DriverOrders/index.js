@@ -1,7 +1,9 @@
 import { AlternateEmail } from '@material-ui/icons'
+import { Button } from "react-bootstrap"
 import { replace } from 'formik'
 import React, { Component } from 'react'
 import OrdersApi from '../../api/OrdersApi'
+import { TextField } from '@material-ui/core'
 
 export default class DriverOrders extends Component {
 
@@ -65,12 +67,12 @@ export default class DriverOrders extends Component {
       <div>
         <h1>Orders for driver</h1>
 
-        <div>
+        <div style={{ marginTop: "50px", display: 'flex', justifyContent: "center" }}>
           {
             this.state.orders.map((e, index) => {
               return (
                 <div>
-                  <p>{e._id.$oid} <button onClick={() => this.confirmReceive(e._id.$oid)}>Confirm receive</button></p>
+                  <p><b>ID narudzbe:</b> {e._id.$oid} <Button color="primary" onClick={() => this.confirmReceive(e._id.$oid)}>Confirm receive</Button></p>
 
                   <ul>
                     {
@@ -81,8 +83,10 @@ export default class DriverOrders extends Component {
                   </ul>
 
                   <form onSubmit={(a) => this.addCarptetForOrder(a, e._id.$oid)}>
-                    <input type="text" name="name" onChange={this.onChange} placeholder="Name" value={this.state.name} />
-                    <button type="submit">Submit</button>
+                    <br />
+                    <TextField variant="outlined" label="Naziv cilima" type="text" name="name" onChange={this.onChange} placeholder="Name" value={this.state.name} />
+                    <br />
+                    <Button style={{ marginTop: "10px" }} color="primary" type="submit">Submit</Button>
                   </form>
 
                 </div>

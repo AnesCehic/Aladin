@@ -1,23 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import CarpetApi from '../../../api/CarpetApi'
 import { CARPET_TYPES } from '../../../redux/CarpetRedux/types'
 
 class Types extends Component {
 
+  state = {
+    types: []
+  }
+
   componentDidMount() {
-    this.props.dispatch({ type: CARPET_TYPES });
+    CarpetApi.getCarpetTypes()
+      .then(res => {
+        this.setState({
+          types: res.data
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
-    const { types } = this.props.state.carpetStatuses;
+    const { types } = this.state;
     return (
       <div>
-        <h1>Types</h1>
 
-        <ul>
+        <ul style={{ listStyleType: "none" }}>
           {
             types.map((e, index) => {
-              return <li key={index}>{e.name}: {e.price_per_surface}</li>
+              return <li style={{ borderBottom: "1px solid black", borderRadius: "5px", boxShadow: "5px 5px 5px #faca0f", padding: "10px", margin: "20px", width: "200px" }} key={index}>{e.name}: {e.price_per_surface}</li>
             })
           }
         </ul>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Button } from 'react-bootstrap';
 import OrdersApi from '../../api/OrdersApi';
 import instance from '../../axios';
 
@@ -46,10 +46,10 @@ export default class ForMeasurements extends Component {
 
   renderCarpets = (arr) => {
     return (
-      <ul>
+      <ul style={{ listStyleType: "none" }}>
         {
           arr.map((e2, index2) => {
-            return <li><Link to={`/dashboard/updateCarptetForOrder/${e2._id.$oid}`} key={index2}>{e2.name}</Link></li>
+            return <li>Tepih: <Link to={`/dashboard/updateCarptetForOrder/${e2._id.$oid}`} key={index2}>{e2.name}</Link></li>
           })
         }
       </ul>
@@ -63,7 +63,7 @@ export default class ForMeasurements extends Component {
         {
           this.state.orders.map((e, index) => {
             return <div>
-              <p key={index}>{e.order._id.$oid} <button onClick={() => this.measure(e.order._id.$oid)}>Measure</button></p>
+              <p key={index}>ID narudzbe: <b>{e.order._id.$oid}</b> <Button onClick={() => this.measure(e.order._id.$oid)}>Measure</Button></p>
               {this.renderCarpets(e.carpets)}
             </div>
           })

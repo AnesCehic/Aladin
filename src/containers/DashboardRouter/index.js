@@ -27,6 +27,7 @@ const DashboardRouter = (props) => {
     <div>
       <Route path={`${props.path}`} exact component={Index} />
       <Route exact path={`${props.path}/orders`} component={Orders} />
+      <Route path={`${props.path}/users`} component={Users} />
       <Route path={`${props.path}/addAdmin`} component={AddAdmin} />
       <Route path={`${props.path}/editOrder/:id`} component={() => <h1>Edit</h1>} />
       <Route path={`${props.path}/orderDetails/:id`} component={OrderDetails} />

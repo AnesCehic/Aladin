@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import OrdersApi from '../../api/OrdersApi'
 
+import { Button } from 'react-bootstrap'
+
 export default class MeasuredOrders extends Component {
 
   state = {
@@ -36,6 +38,7 @@ export default class MeasuredOrders extends Component {
     OrdersApi.packOrder(id)
       .then(res => {
         alert("Packed")
+        this.getData();
       })
       .catch(err => {
         console.log(err)
@@ -54,7 +57,7 @@ export default class MeasuredOrders extends Component {
         {
           this.state.orders.map((e, index) => {
             return <div key={index}>
-              <p>{e._id.$oid} <button onClick={() => this.packOrder(e._id.$oid)}>Pack order</button></p>
+              <p>ID narudžbe: <b>{e._id.$oid}</b> <Button onClick={() => this.packOrder(e._id.$oid)}>Pack order</Button></p>
 
               <ul>
                 {
@@ -62,7 +65,7 @@ export default class MeasuredOrders extends Component {
                     return <li 
                       key={index2}
                     >
-                      {e2.name}, {e2.width}, {e2.length}, {e2.price} KM 
+                      Ime: {e2.name}, Dužina: {e2.width}, Širina: {e2.length}, Cijena: {e2.price} KM, Spakovan: 
                       <input 
                         type="checkbox"
                         name="isPacked"

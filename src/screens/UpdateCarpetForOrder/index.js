@@ -1,6 +1,10 @@
+import { TextField } from '@material-ui/core'
 import { ThreeDRotationSharp } from '@material-ui/icons'
 import React, { Component } from 'react'
+import { Container, Button } from 'react-bootstrap'
 import CarpetApi from '../../api/CarpetApi'
+
+import "./style.scss"
 
 export default class updateCarptetForOrder extends Component {
 
@@ -62,12 +66,15 @@ export default class updateCarptetForOrder extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ width: "600px", margin: "auto" }}>
         <h1>Update carpet data</h1>
 
-        <form onSubmit={this.handleSubmit}>
-          <input type="number" value={this.state.width} step=".01" name="width" onChange={this.onChange} placeholder="Width" />
-          <input type="number" step=".01" name="height" value={this.state.height} placeholder="Length" onChange={this.onChange} />
+        <form onSubmit={this.handleSubmit} className="updateForm" style={{ display:'flex', flexDirection: "column" }}>
+          <label>Dužina</label>
+          <TextField type="number" value={this.state.width} step=".01" name="width" onChange={this.onChange} placeholder="Width" variant="outlined"/>
+          <label>Širina</label>
+          <TextField variant="outlined" type="number" step=".01" name="height" value={this.state.height} placeholder="Length" onChange={this.onChange} />
+          <label>Tip</label>
           <select value={this.state.type && this.state.type._id.$oid} name="type" onChange={this.onChangeSelect}>
             <option value="">Select carpet type</option>
             {
@@ -77,7 +84,7 @@ export default class updateCarptetForOrder extends Component {
             }
           </select>
 
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     )

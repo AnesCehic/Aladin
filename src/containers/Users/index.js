@@ -11,6 +11,7 @@ import Pagination from '../../components/Pagination'
 import './style.scss'
 import { FETCH_USERS } from '../../redux/UsersRedux/types';
 import UserShow from '../../components/UserShow';
+import UsersApi from '../../api/UsersApi';
 
 class Users extends React.Component {
 
@@ -28,7 +29,16 @@ class Users extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch({ type: FETCH_USERS })
+    UsersApi.getUsers()
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          users: res.data
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
@@ -52,7 +62,7 @@ class Users extends React.Component {
 
         <br/>
 
-        {this.props.users.map((e, index) => { return <UserShow key={index} user={e} /> })}
+        {this.state.users.map((e, index) => { return <UserShow key={index} user={e} /> })}
 
         <Pagination />
       </div>

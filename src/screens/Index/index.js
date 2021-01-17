@@ -23,15 +23,15 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <h1>Index</h1>
+        <h1 style={{ textAlign: "center", margin: "50px" }}>Index</h1>
 
-        <ul>
+        <div className="history">
           {
             this.state.data.map((e, index) => {
-              return <li>{e._id.$oid}, {e.customer.first_name}, {e.customer.last_name}</li>
+              return <div><div>{e._id.$oid}</div> <div>Ime: {e.customer.first_name}, Prezime: {e.customer.last_name}</div><div>Ulica: {e.customer.street} br. {e.customer.street_number}</div><div>Telefon: {e.customer.telephone_number}</div><div>Status: <b>{e.order_status.value}</b></div></div>
             })
           }
-        </ul>
+        </div>
       </div>
     )
   }
