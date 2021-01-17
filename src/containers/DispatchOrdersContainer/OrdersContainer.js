@@ -55,12 +55,12 @@ export default class OrdersContainer extends Component {
   }
 
   render() {
-    console.log(this.props.orders)
     return (
       <div>
         <h1>Orders ready to dispatch</h1>
 
         <table>
+        <thead>
           <tr>
             <th>ID narudzbe</th>
             <th>Created at</th>
@@ -69,7 +69,7 @@ export default class OrdersContainer extends Component {
             <th>Driver</th>
             <th>Telephone</th>
           </tr>
-          
+          </thead>
           <tbody>
           {
             this.props.orders.map((e, index) => {
@@ -83,8 +83,8 @@ export default class OrdersContainer extends Component {
                     <select onChange={(a) => this.selectDriver(a, e)}>
                       <option value="">SELECT DRIVER</option>
                       {
-                        this.state.drivers.map((e2, index) => {
-                          return <option value={e2._id.$oid}>{e2.username}</option>
+                        this.state.drivers.map((e2, index2) => {
+                          return <option key={index2} value={e2._id.$oid}>{e2.username}</option>
                         })
                       }
                     </select>

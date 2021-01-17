@@ -61,7 +61,6 @@ class AddCustomerForm extends Component {
                 }).catch(err => {
                   console.log(err);
                 })
-                console.log(values)
               }}
             >
               <Form style={{ display: "flex", flexDirection: "column", alignSelf: "center" }}>

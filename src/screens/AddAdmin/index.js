@@ -53,7 +53,6 @@ class AddAdmin extends Component {
                 role: "",
               }}
               onSubmit={(values, { resetForm }) => {
-                console.log(values);
                 instance.post("/api/auth/signup", values, {
                   headers: {
                     "Authorization": "Bearer " + localStorage.getItem("token")

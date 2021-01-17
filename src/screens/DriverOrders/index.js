@@ -15,7 +15,6 @@ export default class DriverOrders extends Component {
   getData = () => {
     OrdersApi.getOrdersForDriver()
       .then(resp => {
-        console.log(resp.data)
         this.setState({
           orders: resp.data
         })
@@ -31,7 +30,6 @@ export default class DriverOrders extends Component {
 
   addCarptetForOrder = (e, id) => {
     e.preventDefault();
-    console.log(id, this.state.name)
 
     OrdersApi.addCarptetForOrder(id, this.state.name)
       .then(res => {
@@ -71,7 +69,7 @@ export default class DriverOrders extends Component {
           {
             this.state.orders.map((e, index) => {
               return (
-                <div>
+                <div key={index}>
                   <p><b>ID narudzbe:</b> {e._id.$oid} <Button color="primary" onClick={() => this.confirmReceive(e._id.$oid)}>Confirm receive</Button></p>
 
                   <ul>

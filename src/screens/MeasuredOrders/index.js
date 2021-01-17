@@ -10,7 +10,6 @@ export default class MeasuredOrders extends Component {
   }
 
   orderDone = (e, id) => {
-    console.log(e.target.checked, id)
 
     OrdersApi.checkOrderAsDone(id, e.target.checked)
       .then(_ => {
@@ -27,7 +26,7 @@ export default class MeasuredOrders extends Component {
       .then(res => {
         this.setState({
           orders: res.data
-        }, () => console.log(this.state))
+        })
       })
       .catch(err => {
         console.log(err)

@@ -9,7 +9,6 @@ const OrdersApi = {
     })
   },
   addOrder: (order) => {
-    console.log(order)
     return instance.post('/api/accept_order', order, {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")

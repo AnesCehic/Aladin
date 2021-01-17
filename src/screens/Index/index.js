@@ -28,7 +28,7 @@ class Index extends Component {
         <div className="history">
           {
             this.state.data.map((e, index) => {
-              return <div><div>{e._id.$oid}</div> <div>Ime: {e.customer.first_name}, Prezime: {e.customer.last_name}</div><div>Ulica: {e.customer.street} br. {e.customer.street_number}</div><div>Telefon: {e.customer.telephone_number}</div><div>Status: <b>{e.order_status.value}</b></div></div>
+              return <div key={index}><div>{e._id.$oid}</div> <div>Ime: {e.customer.first_name}, Prezime: {e.customer.last_name}</div><div>Ulica: {e.customer.street} br. {e.customer.street_number}</div><div>Telefon: {e.customer.telephone_number}</div><div>Status: <b>{e.order_status.value}</b></div></div>
             })
           }
         </div>

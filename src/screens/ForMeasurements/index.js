@@ -22,7 +22,6 @@ export default class ForMeasurements extends Component {
         });
       }
 
-      console.log("Orders: ", this.state.orders)
     } catch (error) {
       console.log(error)
     }
@@ -49,7 +48,7 @@ export default class ForMeasurements extends Component {
       <ul style={{ listStyleType: "none" }}>
         {
           arr.map((e2, index2) => {
-            return <li>Tepih: <Link to={`/dashboard/updateCarptetForOrder/${e2._id.$oid}`} key={index2}>{e2.name}</Link></li>
+            return <li key={index2}>Tepih: <Link to={`/dashboard/updateCarptetForOrder/${e2._id.$oid}`} key={index2}>{e2.name}</Link></li>
           })
         }
       </ul>
@@ -62,7 +61,7 @@ export default class ForMeasurements extends Component {
         <h1>For measurements</h1>
         {
           this.state.orders.map((e, index) => {
-            return <div>
+            return <div key={index}>
               <p key={index}>ID narudzbe: <b>{e.order._id.$oid}</b> <Button onClick={() => this.measure(e.order._id.$oid)}>Measure</Button></p>
               {this.renderCarpets(e.carpets)}
             </div>

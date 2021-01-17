@@ -61,8 +61,8 @@ class CustomModal extends Component {
   renderEditForm = () => {
     // TODO populate data
     const { order } = this.state;
-    console.log("ORDER :", order)
-    console.log(order.carpet_type)
+    // console.log("ORDER :", order)
+    // console.log(order.carpet_type)
     return (
       <Formik
         initialValues={{
@@ -74,7 +74,7 @@ class CustomModal extends Component {
           carpet_type: this.state.orde,
         }}
         onSubmit={(values) => {
-          console.log(values)
+          // console.log(values)
         }}
       >
         <Form style={{ display: "flex", flexDirection: "column" }} >

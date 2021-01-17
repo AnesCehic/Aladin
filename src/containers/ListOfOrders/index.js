@@ -17,7 +17,6 @@ class ListOfOrders extends Component {
 
   componentDidMount() {
     this.props.getOrders()
-    console.log(this.props.orders)
   }
 
   handleEditClick = (id) => {
@@ -32,8 +31,8 @@ class ListOfOrders extends Component {
           <p>Backlog</p>
 
           {
-            this.props.orders.map(e => {
-              return <Paper className="card">
+            this.props.orders.map((e, index) => {
+              return <Paper className="card" key={index}>
                 <p>Title: {e.customer_name}</p>
                 <Button onClick={() => this.props.moveOrder(e)}>Click</Button>
               </Paper>

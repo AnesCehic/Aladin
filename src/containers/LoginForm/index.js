@@ -43,7 +43,6 @@ const LoginForm = () => {
                 .then(res => {
                   localStorage.setItem("token", res.data.token);
                   setIsLoggedin(true);
-                  setLogging(false);
                 })
                 .catch(err => {
                   console.log(err);

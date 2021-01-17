@@ -31,7 +31,6 @@ class Users extends React.Component {
   componentDidMount() {
     UsersApi.getUsers()
       .then(res => {
-        console.log(res.data)
         this.setState({
           users: res.data
         })

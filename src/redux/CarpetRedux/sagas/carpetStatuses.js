@@ -10,8 +10,6 @@ export function* getCarpetStatusesSaga() {
 
     const res = yield call(CarpetApi.getCarpetStatuses);
 
-    console.log(res.data)
-
     yield put(carpetStatusesSuccess(res.data))
 
   } catch (error) {
@@ -20,13 +18,10 @@ export function* getCarpetStatusesSaga() {
 }
 
 export function* getCarpetTypesSaga () {
-  console.log("Start")
   try {
     yield put(getCarpetTypes());
 
     const res = yield call(CarpetApi.getCarpetTypes);
-
-    console.log(res.data)
 
     yield put(getCarpetTypesSuccess(res.data));
   } catch (error) {

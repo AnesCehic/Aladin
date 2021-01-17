@@ -23,7 +23,6 @@ export default class OrderHistory extends Component {
   }
 
   render() {
-    console.log(this.state.order)
     return (
       <div>
         <h1>History</h1>

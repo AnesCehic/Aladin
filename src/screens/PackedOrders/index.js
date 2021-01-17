@@ -22,7 +22,7 @@ export default class PackedOrders extends Component {
       .then(res => {
         this.setState({
           data: res.data
-        }, () => console.log(this.state.data))
+        })
       })
       .catch(err => {
         console.log(err)
@@ -77,6 +77,7 @@ export default class PackedOrders extends Component {
         <h1>Orders ready to dispatch</h1>
 
         <table>
+        <thead>
           <tr>
             <th>Created at</th>
             <th>Order status</th>
@@ -84,7 +85,7 @@ export default class PackedOrders extends Component {
             <th>Address</th>
             <th>Telephone</th>
           </tr>
-          
+          </thead>
           <tbody>
           {
             this.state.data.map((e, index) => {
@@ -97,8 +98,8 @@ export default class PackedOrders extends Component {
                     <select value={e.delivered_by && e.delivered_by.$oid} onChange={(a) => this.selectDriver(a, e)}>
                       <option value="">SELECT DRIVER</option>
                       {
-                        this.state.drivers.map((e2, index) => {
-                          return <option value={e2._id.$oid}>{e2.username}</option>
+                        this.state.drivers.map((e2, index2) => {
+                          return <option key={index2} value={e2._id.$oid}>{e2.username}</option>
                         })
                       }
                     </select>

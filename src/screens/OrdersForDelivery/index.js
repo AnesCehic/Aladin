@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import OrdersApi from '../../api/OrdersApi'
 import UsersApi from '../../api/UsersApi'
-
+import { Button } from 'react-bootstrap'
 export default class OrdersForDelivery extends Component {
 
   state = {
@@ -23,7 +23,7 @@ export default class OrdersForDelivery extends Component {
       .then(res => {
         this.setState({
           orders: res.data
-        }, () => console.log(this.state))
+        })
       })
       .catch(err => {
         console.log(err)
@@ -38,7 +38,7 @@ export default class OrdersForDelivery extends Component {
         <ul>
           {
             this.state.orders.map((e, index) => {
-              return <li>{e.customer.first_name}, {e.customer.last_name}, {e._id.$oid} <button onClick={() => this.delivered(e._id.$oid)}>Delivered (Price {e.total_price})</button></li>
+              return <li key={index}>{e.customer.first_name}, {e.customer.last_name}, {e._id.$oid} <Button onClick={() => this.delivered(e._id.$oid)}>Delivered (Price {e.total_price})</Button></li>
             })
           }
         </ul>

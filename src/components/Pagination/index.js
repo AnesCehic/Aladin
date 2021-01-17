@@ -6,10 +6,6 @@ import { FETCH_USERS } from '../../redux/UsersRedux/types';
 
 class TablePaginationDemo extends React.Component {
 
-  componentDidMount() {
-    console.log("STATE: ", this.props.state)
-  }
-
   handleChangePage = (event, newPage) => {
     this.props.setPage(newPage)
     this.props.dispatch({ type: FETCH_USERS });
